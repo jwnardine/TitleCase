@@ -1,6 +1,6 @@
 <?php
     require_once __DIR__."/../vendor/autoload.php";
-    require_once __DIR__."/../src/TitleCaseGenerator.php";
+    require_once __DIR__."/../src/Queen.php";
 
     $app = new Silex\Application();
 
@@ -12,10 +12,10 @@
         return $app['twig']->render('form.html.twig');
     });
 
-    $app->get("/view_title_case", function() use($app) {
-        $my_TitleCaseGenerator = new TitleCaseGenerator;
-        $title_cased_phrase = $my_TitleCaseGenerator->makeTitleCase($_GET['phrase']);
-        return $app['twig']->render('title_cased.html.twig', array('result' => $title_cased_phrase));
+    $app->get("/view_attack", function() use($app) {
+        $my_Queen = new Queen;
+        $check_attack = $my_Queen->canAttack($_GET['queenx'], $_GET['queeny'], $_GET['kingx'], $_GET['kingy']);
+        return $app['twig']->render('queen_attacked.html.twig', array('result' => $check_attack));
     });
 
     return $app;

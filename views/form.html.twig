@@ -2,18 +2,30 @@
 <html>
 <head>
     <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css'>
-    <title>Convert to Title Case!</title>
+    <title>Can the Queen Attack?</title>
 </head>
 <body>
     <div class='container'>
-        <h1>Title Case Translator</h1>
-        <p>Enter the phrase you would like translated into title case</p>
-        <form action='/view_title_case'>
+        <h1>Queen Attack Simulator</h1>
+        <p>Enter the x and y cooridinates of your queen and pawn pieces and push the button to see if the queen can attack the pawn in <strong>one move</strong></p>
+        <form action='/view_attack'>
             <div class='form-group'>
-              <label for='phrase'>Phrase:</label>
-              <input id='phrase' name='phrase' class='form-control' type='text'>
+              <label for='queenx'>Queen's x-position:</label>
+              <input id='queenx' name='queenx' class='form-control' type='number'>
             </div>
-            <button type='submit' class='btn-success'>Translate</button>
+            <div class='form-group'>
+              <label for='queeny'>Queen's y-position:</label>
+              <input id='queeny' name='queeny' class='form-control' type='number'>
+            </div>
+            <div class='form-group'>
+              <label for='kingx'>King's x-position:</label>
+              <input id='kingx' name='kingx' class='form-control' type='number'>
+            </div>
+            <div class='form-group'>
+              <label for='kingy'>King's y-position:</label>
+              <input id='kingy' name='kingy' class='form-control' type='number'>
+            </div>
+            <button type='submit' class='btn-success'>Can she attack?</button>
         </form>
     </div>
 </body>
